@@ -1,6 +1,4 @@
-import readline from "node:readline";
-import { CLICommand, getCommands } from "./command.js";
-
+import { State } from "./state.js";
 
 
 export function cleanInput(input: string): string[] {
@@ -17,17 +15,9 @@ export interface REPLConfig {
 	prompt: string;
 }
 
-export function startREPL() {
-	const commands = getCommands();
-	const config: REPLConfig = {
-		input: process.stdin,
-		output: process.stdout,
-		prompt: "Pokedex > ",
-	}
-
-
-
-	const rl = readline.createInterface(config);
+export function startREPL(state: State) {
+    const rl = state.rl;
+    const commands = state.commands;
 	rl.prompt();
 	rl.on("line", (line: string) => {
 		const words = cleanInput(line);
@@ -43,7 +33,7 @@ export function startREPL() {
 			return;
 		}
 		try {
-			command.callback(commands);
+			command.callback(state);
 		} catch (error) {
 			console.error(error);
 		}
