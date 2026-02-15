@@ -94,6 +94,15 @@ export interface LocationArea {
 };
 
 export interface Pokemon {
-    name: string,
-    base_experience: number,
+    name: string;
+    height: number;
+    weight: number;
+    stats: {
+        base_stat: number;
+        stat: { name: string };
+    }[];
+    types: {
+        type: { name: string };
+    }[];
+    base_experience: number;
 }
