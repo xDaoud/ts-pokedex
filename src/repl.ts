@@ -33,7 +33,7 @@ export function startREPL(state: State) {
 			return;
 		}
 		try {
-			await command.callback(state);
+			await command.callback(state, ...words.slice(1));
 		} catch (error) {
 			console.error(error);
 		}
