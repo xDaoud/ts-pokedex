@@ -51,6 +51,21 @@ export class PokeAPI {
         this.cache.add(url, data);
         return data;
     }
+
+    async fetchPokemon(name: string): Promise<Pokemon> {
+        const url = `${PokeAPI.baseURL}/pokemon/${name}`;
+        const cached = this.cache.get<Pokemon>(url);
+        if(cached){ 
+            return cached;
+        }
+        const result = await fetch(url);
+        if(!result.ok) {
+            throw new Error("failed to fetch area");
+        }
+        const data: Pokemon = await result.json();
+        this.cache.add(url, data);
+        return data;
+    }
     
 }
 export interface ShallowLocations {
@@ -77,3 +92,8 @@ export interface LocationArea {
         };
     }[];
 };
+
+export interface Pokemon {
+    name: string,
+    base_experience: number,
+}
