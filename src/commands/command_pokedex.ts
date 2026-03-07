@@ -1,4 +1,4 @@
-import { State } from "./state.js";
+import { State } from "../state.js";
 
 export async function pokedexCommand(state:State): Promise<void> {
     console.log("Your Pokedex:");

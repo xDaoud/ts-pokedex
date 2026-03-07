@@ -1,4 +1,4 @@
-import { State } from "./state.js";
+import { State } from "../state.js";
 export async function inspectCommand(state:State, ...args: string[]): Promise<void> {
     const name = args[0];
     if(!name){

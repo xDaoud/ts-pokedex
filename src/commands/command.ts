@@ -1,11 +1,10 @@
-import { CLICommand } from "./state.js";
+import { CLICommand } from "../state.js";
 import { commandExit } from "./command_exit.js";
 import { commandHelp } from "./command_help.js";
 import { commandMap } from "./command_map.js";
 import { commandMapb } from "./command_mapb.js";
 import { commandExplore } from "./command_explore.js";
 import { commandCatch } from "./commad_catch.js"
-import { inspect } from "node:util";
 import { inspectCommand } from "./command_inspect.js";
 import { pokedexCommand } from "./command_pokedex.js";
 

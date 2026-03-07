@@ -1,5 +1,5 @@
-import { PokeAPI } from "./pokeapi.js";
-import { State } from "./state.js";
+import { PokeAPI } from "../pokeapi.js";
+import { State } from "../state.js";
 
 const api = new PokeAPI();
 

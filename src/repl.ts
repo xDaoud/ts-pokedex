@@ -8,13 +8,13 @@ export function cleanInput(input: string): string[] {
 		.split(/\s+/)
 		.filter(Boolean);
 }
-
+/** 
 export interface REPLConfig {
 	input: NodeJS.ReadableStream;
 	output: NodeJS.WritableStream;
 	prompt: string;
 }
-
+*/
 export function startREPL(state: State) {
     const rl = state.rl;
     const commands = state.commands;

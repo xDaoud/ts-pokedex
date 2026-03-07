@@ -1,6 +1,6 @@
 import { type Interface } from "readline";
 import readline from "node:readline";
-import { getCommands } from "./command.js";
+import { getCommands } from "./commands/command.js";
 import { PokeAPI } from "./pokeapi.js";
 import { Pokemon } from "./pokeapi.js";
 
